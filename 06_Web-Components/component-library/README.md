@@ -25,6 +25,23 @@ No local installation, package manager, build step, or external library is requi
 
 The workflow publishes only this directory. It is manual by design; normal commits do not automatically publish a new preview.
 
+## Manual quality check
+
+Before treating a preview as ready for reuse:
+
+1. Open the page at desktop width and at a narrow mobile width.
+2. Use only the keyboard: Tab, Shift+Tab, Enter, Space, Left/Right arrows, Home, and End.
+3. Confirm the skip link moves focus to the main content.
+4. Open and close every accordion section.
+5. Move through the tabs with arrow keys and confirm only the selected panel is exposed.
+6. Reveal and hide the flashcard answer.
+7. Submit the knowledge check without an answer, with a wrong answer, and with the correct answer.
+8. Confirm progress changes only for completed activities.
+9. Check browser console output for errors.
+10. Repeat with browser zoom at 200%.
+
+Record browser, device/viewport, test date, results, and defects in the repository QA checklist. These checks are manual and do not replace screen-reader or formal accessibility testing.
+
 ## Reuse
 
 Copy the relevant markup pattern into an approved course project and adapt its text and labels. Keep the matching CSS and JavaScript behaviour together. Change identifiers when using multiple instances on one page.
