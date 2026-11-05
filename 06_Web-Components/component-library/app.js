@@ -8,9 +8,11 @@
 
   function updateProgress() {
     if (!progressBar || !progressFill || !progressLabel) return;
-    const total = 2;
+    const total = document.querySelectorAll("[data-flashcard], [data-knowledge-check]").length;
     const count = completedActivities.size;
-    progressFill.style.width = ((count / total) * 100) + "%";
+    const percent = total ? Math.min(100, (count / total) * 100) : 0;
+    progressFill.style.width = percent + "%";
+    progressBar.setAttribute("aria-valuemax", String(total));
     progressBar.setAttribute("aria-valuenow", String(count));
     progressLabel.textContent = count + " of " + total + " activities complete";
   }
