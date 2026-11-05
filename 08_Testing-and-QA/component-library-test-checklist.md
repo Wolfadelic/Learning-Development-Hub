@@ -1,6 +1,6 @@
 # Component Library Manual QA Checklist
 
-**Release:** 0.2  
+**Release:** 0.3  
 **Status:** Pending hands-on browser verification
 
 Record browser and version, operating system, viewport size, date, tester, result, and defect reference. Do not mark a test passed until it has been performed.
@@ -28,6 +28,21 @@ Record browser and version, operating system, viewport size, date, tester, resul
 - [ ] Final outcome appears after the second correct decision.
 - [ ] Completing the scenario updates the progress indicator.
 - [ ] Restart returns to decision one and clears scenario completion.
+
+## User-reported scenario test results — 2026-11-05
+
+The user manually tested the deployed scenario and reported the following outcomes:
+
+| Test | Result | Notes |
+|---|---|---|
+| Incorrect choice allows retry | Pass | Retry was available after an incorrect selection. |
+| Completing both decisions updates progress | Pass | Progress indicator changed after scenario completion. |
+| Restart returns to decision one | Pass | Scenario returned to the first decision. |
+| Restart clears scenario completion | Pass | Progress indicator changed after selecting “Try the scenario again”. |
+
+**Interpretation:** The progress change on restart is expected. The scenario's completion is removed from the total, while any other completed activities remain counted. For example, if all three activities were complete before restart, the expected result is 2 of 3 complete afterward—not 0 of 3.
+
+Browser version, device viewport, and screen-reader behaviour were not recorded in this test report. Other accessibility and responsive checks remain pending.
 
 ## Accessibility checks
 
