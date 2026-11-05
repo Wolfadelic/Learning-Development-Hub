@@ -19,6 +19,16 @@ Record browser and version, operating system, viewport size, date, tester, resul
 - [ ] Progress updates when the flashcard is first revealed.
 - [ ] Progress updates after a correct answer and reverses if a later answer is incorrect.
 
+## Scenario interaction checks
+
+- [ ] Scenario begins at decision one.
+- [ ] Each incorrect choice provides an explanation and allows another attempt.
+- [ ] Correct choices unlock the next decision.
+- [ ] Focus moves to the next decision heading.
+- [ ] Final outcome appears after the second correct decision.
+- [ ] Completing the scenario updates the progress indicator.
+- [ ] Restart returns to decision one and clears scenario completion.
+
 ## Accessibility checks
 
 - [ ] Skip link is visible on keyboard focus and moves to main content.
