@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A reusable, accessible learning interaction component library.">
+  <title>Learning Components | Learning Development Hub</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to learning components</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#top" aria-label="Learning Development Hub home">
+        <span class="brand-mark" aria-hidden="true">LD</span>
+        <span><strong>Learning Development Hub</strong><small>Reusable component library</small></span>
+      </a>
+      <span class="version-tag">FOUNDATION · 0.1</span>
+    </div>
+  </header>
+
+  <main id="main" class="page-shell">
+    <section class="hero" id="top">
+      <p class="eyebrow">INTERACTIVE LEARNING TOOLKIT</p>
+      <h1>Make learning <span>active.</span></h1>
+      <p class="hero-copy">A starter collection of reusable interactions for clear, engaging digital learning. Explore each component, try it, and see how it responds.</p>
+      <div class="hero-meta"><span class="status-dot" aria-hidden="true"></span> Five interactive patterns · No installation required</div>
+    </section>
+
+    <section class="progress-panel" aria-labelledby="progress-heading">
+      <div class="progress-copy">
+        <div><p class="eyebrow">YOUR SESSION</p><h2 id="progress-heading">Learning progress</h2></div>
+        <strong id="progress-label" aria-live="polite">0 of 2 activities complete</strong>
+      </div>
+      <div class="progress-track" role="progressbar" aria-label="Learning activity progress" aria-valuemin="0" aria-valuemax="2" aria-valuenow="0" id="progress-bar">
+        <span id="progress-fill"></span>
+      </div>
+      <p class="helper-text">Reveal a flashcard and submit the knowledge check to complete this short demo.</p>
+    </section>
+
+    <div class="section-heading">
+      <div><p class="eyebrow">EXPLORE THE LIBRARY</p><h2>Learning components</h2></div>
+      <span class="component-count">01 — 05</span>
+    </div>
+
+    <section class="component-card" aria-labelledby="accordion-heading">
+      <div class="card-heading"><span class="component-number">01</span><div><p class="eyebrow">EXPLORE</p><h3 id="accordion-heading">Accordion</h3><p class="card-description">Organise detailed information into sections learners can open when they need it.</p></div></div>
+      <div class="accordion">
+        <details>
+          <summary>What makes an effective learning interaction?</summary>
+          <div class="details-content"><p>An effective interaction has a clear purpose, simple instructions, meaningful learner action, and feedback that supports the learning objective.</p></div>
+        </details>
+        <details>
+          <summary>When should I use an accordion?</summary>
+          <div class="details-content"><p>Use it for related information that learners may want to explore selectively. Avoid hiding essential instructions or making learners open many panels to complete a task.</p></div>
+        </details>
+        <details>
+          <summary>What should I avoid?</summary>
+          <div class="details-content"><p>Avoid vague labels, excessive nesting, and content that is difficult to compare because it is spread across closed panels.</p></div>
+        </details>
+      </div>
+    </section>
+
+    <section class="component-card" aria-labelledby="tabs-heading">
+      <div class="card-heading"><span class="component-number">02</span><div><p class="eyebrow">COMPARE</p><h3 id="tabs-heading">Tabbed content</h3><p class="card-description">Present a small set of related topics without overwhelming the page.</p></div></div>
+      <div class="tabs" data-tabs>
+        <div class="tab-list" role="tablist" aria-label="Learning design principles">
+          <button class="tab-button is-active" id="tab-purpose" role="tab" aria-selected="true" aria-controls="panel-purpose" tabindex="0">Purpose</button>
+          <button class="tab-button" id="tab-action" role="tab" aria-selected="false" aria-controls="panel-action" tabindex="-1">Action</button>
+          <button class="tab-button" id="tab-feedback" role="tab" aria-selected="false" aria-controls="panel-feedback" tabindex="-1">Feedback</button>
+        </div>
+        <div class="tab-panel" id="panel-purpose" role="tabpanel" aria-labelledby="tab-purpose" tabindex="0"><h4>Start with purpose</h4><p>Every interaction should help the learner practise, apply, retrieve, or reflect on something that matters.</p></div>
+        <div class="tab-panel" id="panel-action" role="tabpanel" aria-labelledby="tab-action" tabindex="0" hidden><h4>Make the learner act</h4><p>Ask learners to make a choice, reveal an answer, sort information, or explain a decision—not simply click to continue.</p></div>
+        <div class="tab-panel" id="panel-feedback" role="tabpanel" aria-labelledby="tab-feedback" tabindex="0" hidden><h4>Close the learning loop</h4><p>Feedback should explain the result and guide the learner towards the intended understanding or next step.</p></div>
+      </div>
+    </section>
+
+    <section class="component-card" aria-labelledby="flashcard-heading">
+      <div class="card-heading"><span class="component-number">03</span><div><p class="eyebrow">RECALL</p><h3 id="flashcard-heading">Flashcard</h3><p class="card-description">Support active recall by asking learners to retrieve an idea before revealing it.</p></div></div>
+      <article class="flashcard" aria-live="polite">
+        <p class="eyebrow" id="flashcard-state">QUESTION</p>
+        <h4 id="flashcard-text">What is the main purpose of retrieval practice?</h4>
+        <p id="flashcard-answer" hidden>To strengthen learning by asking learners to recall information from memory rather than only reviewing it.</p>
+        <button class="button button-primary" id="flashcard-toggle" type="button" aria-expanded="false" aria-controls="flashcard-answer">Reveal answer</button>
+      </article>
+    </section>
+
+    <section class="component-card" aria-labelledby="quiz-heading">
+      <div class="card-heading"><span class="component-number">04</span><div><p class="eyebrow">CHECK UNDERSTANDING</p><h3 id="quiz-heading">Knowledge check</h3><p class="card-description">Give learners a low-stakes opportunity to apply what they have explored.</p></div></div>
+      <form id="knowledge-check">
+        <fieldset class="quiz-fieldset">
+          <legend>Which feedback is most useful after a learner selects an incorrect answer?</legend>
+          <label class="answer-option"><input type="radio" name="answer" value="a"><span>“Incorrect. Try again.”</span></label>
+          <label class="answer-option"><input type="radio" name="answer" value="b"><span>“Not quite. Review the explanation and consider why the other option is more suitable.”</span></label>
+          <label class="answer-option"><input type="radio" name="answer" value="c"><span>“Wrong. You should know this by now.”</span></label>
+        </fieldset>
+        <button class="button button-primary" type="submit">Check my answer</button>
+        <div id="quiz-feedback" class="feedback" role="status" aria-live="polite" hidden></div>
+      </form>
+    </section>
+
+    <section class="component-card principles-card" aria-labelledby="principles-heading">
+      <div class="card-heading"><span class="component-number">05</span><div><p class="eyebrow">DESIGN NOTE</p><h3 id="principles-heading">Build with intention</h3><p class="card-description">A reusable component is only useful when it improves the learning experience.</p></div></div>
+      <div class="principle-grid">
+        <div><strong>01</strong><h4>Accessible</h4><p>Keyboard-friendly controls, labels, focus indicators, and readable contrast.</p></div>
+        <div><strong>02</strong><h4>Reusable</h4><p>Consistent patterns that can be adapted without rewriting the interaction.</p></div>
+        <div><strong>03</strong><h4>Responsive</h4><p>Layouts that remain usable on desktop, tablet, and mobile screens.</p></div>
+      </div>
+    </section>
+
+    <footer class="site-footer"><span>Learning Development Hub</span><span>Component library · Demonstration content</span></footer>
+  </main>
+</body>
+</html>
