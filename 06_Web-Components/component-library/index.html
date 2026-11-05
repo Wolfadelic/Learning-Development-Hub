@@ -6,6 +6,8 @@
   <meta name="description" content="A reusable, accessible learning interaction component library.">
   <title>Learning Components | Learning Development Hub</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="scenario-config.js" defer></script>
+  <script src="scenario-engine.js" defer></script>
   <script src="app.js" defer></script>
 </head>
 <body>
@@ -16,7 +18,7 @@
         <span class="brand-mark" aria-hidden="true">LD</span>
         <span><strong>Learning Development Hub</strong><small>Reusable component library</small></span>
       </a>
-      <span class="version-tag">FOUNDATION · 0.3</span>
+      <span class="version-tag">FOUNDATION · 0.4</span>
     </div>
   </header>
 
@@ -102,47 +104,8 @@
 
 
     <section class="component-card" aria-labelledby="scenario-heading">
-      <div class="card-heading"><span class="component-number">05</span><div><p class="eyebrow">MAKE A DECISION</p><h3 id="scenario-heading">Scenario-based learning</h3><p class="card-description">Work through a realistic invoice rejection. Choose an action, review the consequences, and decide what to do next.</p></div></div>
-      <div class="scenario-shell" data-scenario>
-        <div class="scenario-context">
-          <p class="eyebrow">YOUR ROLE · EBILLING ASSOCIATE</p>
-          <p>A client has rejected an invoice because the timekeeper rate does not match its records. The invoice is due for resubmission today. The matter profile shows <strong>$400 per hour</strong>, while the client’s rejection note refers to an approved rate of <strong>$425 per hour</strong>.</p>
-          <p class="scenario-instruction">Choose the safest next action. You can retry if your first choice is not appropriate.</p>
-        </div>
-        <section class="scenario-step" data-scenario-step="1" aria-labelledby="scenario-step-one-heading">
-          <p class="eyebrow">DECISION 1 OF 2</p>
-          <h4 id="scenario-step-one-heading">What should you do first?</h4>
-          <div class="scenario-options" role="group" aria-labelledby="scenario-step-one-heading">
-            <button type="button" class="scenario-choice" data-scenario-choice data-correct="false">Change the rate to $425 and resubmit immediately.</button>
-            <button type="button" class="scenario-choice" data-scenario-choice data-correct="true">Review the rejection details and verify the approved rate, effective date, and supporting approval.</button>
-            <button type="button" class="scenario-choice" data-scenario-choice data-correct="false">Override the rate on this invoice so it can meet today’s deadline.</button>
-          </div>
-          <div class="scenario-feedback" data-scenario-feedback role="status" aria-live="polite" hidden>
-            <p data-scenario-feedback-text></p>
-            <button type="button" class="button button-primary" data-scenario-next hidden>Continue to decision 2</button>
-          </div>
-        </section>
-        <section class="scenario-step" data-scenario-step="2" aria-labelledby="scenario-step-two-heading" hidden>
-          <p class="eyebrow">DECISION 2 OF 2</p>
-          <h4 id="scenario-step-two-heading">You locate a documented approval for $425 per hour, effective from the start of the current billing period. The matter profile still shows $400. What is the best next step?</h4>
-          <div class="scenario-options" role="group" aria-labelledby="scenario-step-two-heading">
-            <button type="button" class="scenario-choice" data-scenario-choice data-correct="false">Update the matter rate and resubmit without checking the invoice lines.</button>
-            <button type="button" class="scenario-choice" data-scenario-choice data-correct="false">Leave the matter profile unchanged and manually edit only the rejected invoice.</button>
-            <button type="button" class="scenario-choice" data-scenario-choice data-correct="true">Follow the approved rate-maintenance process, update the matter details with the correct effective date, then validate the invoice before resubmission.</button>
-          </div>
-          <div class="scenario-feedback" data-scenario-feedback role="status" aria-live="polite" hidden>
-            <p data-scenario-feedback-text></p>
-            <button type="button" class="button button-primary" data-scenario-next hidden>View outcome</button>
-          </div>
-        </section>
-        <section class="scenario-outcome" data-scenario-outcome aria-labelledby="scenario-outcome-heading" hidden>
-          <p class="eyebrow">SCENARIO COMPLETE</p>
-          <h4 id="scenario-outcome-heading">Resolve the cause before resubmitting.</h4>
-          <p>You verified the approval, corrected the matter setup through the approved process, and validated the invoice before resubmission.</p>
-          <div class="scenario-takeaway"><strong>Key learning</strong><p>Do not treat a rejected invoice as an isolated data-entry problem. Verify the source approval, effective date, matter setup, and invoice details. Keep a clear record of the correction and follow the required review process.</p></div>
-          <button type="button" class="button button-secondary" data-scenario-restart>Try the scenario again</button>
-        </section>
-      </div>
+      <div class="card-heading"><span class="component-number">05</span><div><p class="eyebrow">CONFIGURABLE SIMULATION</p><h3 id="scenario-heading">Scenario-based learning</h3><p class="card-description">A reusable scenario engine powered by editable content configuration. This example demonstrates branching decisions, feedback, retry paths and outcomes.</p></div></div>
+      <div data-scenario-engine data-scenario-id="ebilling-rate-rejection"></div>
     </section>
 
     <section class="component-card principles-card" aria-labelledby="principles-heading">
