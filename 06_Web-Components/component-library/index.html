@@ -66,9 +66,9 @@
       <div class="card-heading"><span class="component-number">02</span><div><p class="eyebrow">COMPARE</p><h3 id="tabs-heading">Tabbed content</h3><p class="card-description">Present a small set of related topics without overwhelming the page.</p></div></div>
       <div class="tabs" data-tabs>
         <div class="tab-list" role="tablist" aria-label="Learning design principles">
-          <button class="tab-button is-active" id="tab-purpose" role="tab" aria-selected="true" aria-controls="panel-purpose" tabindex="0">Purpose</button>
-          <button class="tab-button" id="tab-action" role="tab" aria-selected="false" aria-controls="panel-action" tabindex="-1">Action</button>
-          <button class="tab-button" id="tab-feedback" role="tab" aria-selected="false" aria-controls="panel-feedback" tabindex="-1">Feedback</button>
+          <button type="button" class="tab-button is-active" id="tab-purpose" role="tab" aria-selected="true" aria-controls="panel-purpose" tabindex="0">Purpose</button>
+          <button type="button" class="tab-button" id="tab-action" role="tab" aria-selected="false" aria-controls="panel-action" tabindex="-1">Action</button>
+          <button type="button" class="tab-button" id="tab-feedback" role="tab" aria-selected="false" aria-controls="panel-feedback" tabindex="-1">Feedback</button>
         </div>
         <div class="tab-panel" id="panel-purpose" role="tabpanel" aria-labelledby="tab-purpose" tabindex="0"><h4>Start with purpose</h4><p>Every interaction should help the learner practise, apply, retrieve, or reflect on something that matters.</p></div>
         <div class="tab-panel" id="panel-action" role="tabpanel" aria-labelledby="tab-action" tabindex="0" hidden><h4>Make the learner act</h4><p>Ask learners to make a choice, reveal an answer, sort information, or explain a decision—not simply click to continue.</p></div>
@@ -78,17 +78,17 @@
 
     <section class="component-card" aria-labelledby="flashcard-heading">
       <div class="card-heading"><span class="component-number">03</span><div><p class="eyebrow">RECALL</p><h3 id="flashcard-heading">Flashcard</h3><p class="card-description">Support active recall by asking learners to retrieve an idea before revealing it.</p></div></div>
-      <article class="flashcard" aria-live="polite">
-        <p class="eyebrow" id="flashcard-state">QUESTION</p>
+      <article class="flashcard" data-flashcard>
+        <p class="eyebrow" id="flashcard-state" data-flashcard-state>QUESTION</p>
         <h4 id="flashcard-text">What is the main purpose of retrieval practice?</h4>
-        <p id="flashcard-answer" hidden>To strengthen learning by asking learners to recall information from memory rather than only reviewing it.</p>
-        <button class="button button-primary" id="flashcard-toggle" type="button" aria-expanded="false" aria-controls="flashcard-answer">Reveal answer</button>
+        <p id="flashcard-answer" data-flashcard-answer aria-live="polite" hidden>To strengthen learning by asking learners to recall information from memory rather than only reviewing it.</p>
+        <button type="button" class="button button-primary" data-flashcard-toggle type="button" aria-expanded="false" aria-controls="flashcard-answer">Reveal answer</button>
       </article>
     </section>
 
     <section class="component-card" aria-labelledby="quiz-heading">
       <div class="card-heading"><span class="component-number">04</span><div><p class="eyebrow">CHECK UNDERSTANDING</p><h3 id="quiz-heading">Knowledge check</h3><p class="card-description">Give learners a low-stakes opportunity to apply what they have explored.</p></div></div>
-      <form id="knowledge-check">
+      <form id="knowledge-check" data-knowledge-check>
         <fieldset class="quiz-fieldset">
           <legend>Which feedback is most useful after a learner selects an incorrect answer?</legend>
           <label class="answer-option"><input type="radio" name="answer" value="a"><span>“Incorrect. Try again.”</span></label>
@@ -96,7 +96,7 @@
           <label class="answer-option"><input type="radio" name="answer" value="c"><span>“Wrong. You should know this by now.”</span></label>
         </fieldset>
         <button class="button button-primary" type="submit">Check my answer</button>
-        <div id="quiz-feedback" class="feedback" role="status" aria-live="polite" hidden></div>
+        <div id="quiz-feedback" class="feedback" data-quiz-feedback role="status" aria-live="polite" hidden></div>
       </form>
     </section>
 
