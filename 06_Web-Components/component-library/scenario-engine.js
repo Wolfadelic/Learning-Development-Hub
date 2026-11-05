@@ -162,7 +162,7 @@
 
     root.dataset.scenarioId = config.id;
     root.classList.add("scenario-shell");
-    root.replaceChildren();
+    // Keep the intro and stage attached; showNode updates the existing stage.
     showNode(currentNodeId);
   }
 
