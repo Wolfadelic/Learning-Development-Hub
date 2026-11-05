@@ -64,6 +64,7 @@ button { cursor: pointer; }
 .details-content p { margin: 0; }
 .tab-list { display: flex; flex-wrap: wrap; gap: 7px; padding: 5px; border-radius: 12px; background: #f0f3f7; }
 .tab-button { padding: 9px 15px; border: 0; border-radius: 9px; background: transparent; color: #5a687b; font-size: .86rem; font-weight: 700; }
+.tab-button:hover { color: var(--navy); background: #e3eaf3; }
 .tab-button.is-active { background: var(--navy); color: white; box-shadow: 0 2px 7px #17243a20; }
 .tab-panel { padding: 18px 5px 4px; }
 .tab-panel h4, .flashcard h4 { margin: 0 0 6px; color: var(--navy); font-size: 1.08rem; }
@@ -75,10 +76,13 @@ button { cursor: pointer; }
 .button { display: inline-flex; justify-content: center; align-items: center; min-height: 42px; padding: 10px 17px; border: 0; border-radius: 10px; font-size: .86rem; font-weight: 750; }
 .button-primary { background: var(--blue); color: white; }
 .button-primary:hover { background: var(--blue-dark); }
+.button:active { transform: translateY(1px); }
+.button:disabled { cursor: not-allowed; opacity: .6; }
 .quiz-fieldset { min-width: 0; margin: 0 0 18px; padding: 0; border: 0; }
 .quiz-fieldset legend { margin-bottom: 13px; color: var(--navy); font-weight: 750; }
 .answer-option { display: flex; align-items: flex-start; gap: 11px; margin: 9px 0; padding: 12px 14px; border: 1px solid var(--line); border-radius: 11px; color: #526176; font-size: .88rem; cursor: pointer; }
-.answer-option:has(input:checked) { border-color: #80a9e5; background: var(--blue-pale); color: var(--navy); }
+.answer-option.is-selected { border-color: #80a9e5; background: var(--blue-pale); color: var(--navy); }
+.answer-option:hover { border-color: #a9bdd8; }
 .answer-option input { flex: 0 0 auto; margin-top: 4px; accent-color: var(--blue); }
 .feedback { margin-top: 14px; padding: 13px 15px; border-radius: 11px; font-size: .88rem; }
 .feedback.success { border: 1px solid #b9e1cc; background: var(--green-pale); color: #205d43; }
