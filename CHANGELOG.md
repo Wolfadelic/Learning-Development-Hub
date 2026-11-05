@@ -6,6 +6,10 @@ The format is based on the principles of Keep a Changelog. Dates use `YYYY-MM-DD
 
 ## [Unreleased]
 
+### Added
+- Branching eBilling invoice-rejection scenario with two decisions, feedback, retry paths, completion tracking, and restart.
+
+
 ### Changed
 - Refined reusable tab, flashcard, and knowledge-check behaviour for independent component instances.
 - Updated progress tracking to calculate its total from the available interactive activities.
