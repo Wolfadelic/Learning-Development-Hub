@@ -169,6 +169,16 @@
   document.querySelectorAll("[data-scenario-engine]").forEach((root) => {
     const configId = root.dataset.scenarioId;
     const config = configs.find((item) => item.id === configId);
-    renderScenario(root, config);
+    try {
+      if (!config) throw new Error("No scenario configuration found for ID: " + configId);
+      renderScenario(root, config);
+    } catch (error) {
+      console.error("Learning Development Hub scenario failed to initialise:", error);
+      root.classList.add("scenario-shell", "scenario-load-error");
+      root.replaceChildren(
+        element("p", "eyebrow", "SCENARIO UNAVAILABLE"),
+        element("p", "", "The scenario could not be displayed. Check that scenario-config.js and scenario-engine.js are both published, then reload the page. Details: " + error.message)
+      );
+    }
   });
 })();
