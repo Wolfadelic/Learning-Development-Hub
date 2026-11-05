@@ -1,6 +1,6 @@
 # Component Library Manual QA Checklist
 
-**Release:** 0.3  
+**Release:** 0.4  
 **Status:** Pending hands-on browser verification
 
 Record browser and version, operating system, viewport size, date, tester, result, and defect reference. Do not mark a test passed until it has been performed.
@@ -43,6 +43,21 @@ The user manually tested the deployed scenario and reported the following outcom
 **Interpretation:** The progress change on restart is expected. The scenario's completion is removed from the total, while any other completed activities remain counted. For example, if all three activities were complete before restart, the expected result is 2 of 3 complete afterward—not 0 of 3.
 
 Browser version, device viewport, and screen-reader behaviour were not recorded in this test report. Other accessibility and responsive checks remain pending.
+
+## Configurable scenario engine checks
+
+- [ ] Scenario is loaded by its configured ID.
+- [ ] Introduction, role, context, and instructions display from configuration.
+- [ ] Each decision choice displays the configured text.
+- [ ] Incorrect choices show the configured feedback and can be retried.
+- [ ] Correct choices show feedback and navigate to the configured next node.
+- [ ] Alternate correct choices reach their own configured branches.
+- [ ] Information nodes display content and continue to the configured next node.
+- [ ] Outcome nodes display the configured title, content, and takeaway.
+- [ ] Completion event updates the shared progress indicator.
+- [ ] Restart returns to the configured start node and clears scenario completion.
+- [ ] A missing node ID displays a safe configuration error rather than breaking the page.
+- [ ] Configured text is rendered as text, not interpreted as HTML.
 
 ## Accessibility checks
 
