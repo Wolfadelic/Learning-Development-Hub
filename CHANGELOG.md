@@ -6,6 +6,12 @@ The format is based on the principles of Keep a Changelog. Dates use `YYYY-MM-DD
 
 ## [Unreleased]
 
+### Changed
+- Refined reusable tab, flashcard, and knowledge-check behaviour for independent component instances.
+- Improved selected-answer states and documented the manual QA process.
+- Corrected component demo markup and advanced the demo label to version 0.2.
+
+
 ### Added
 - Initial repository overview and planned folder structure.
 - Baseline Git ignore rules.
