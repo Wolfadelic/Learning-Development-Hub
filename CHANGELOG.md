@@ -7,6 +7,9 @@ The format is based on the principles of Keep a Changelog. Dates use `YYYY-MM-DD
 ## [Unreleased]
 
 ### Added
+- Configurable scenario engine with separate scenario data, decision and information nodes, branching, feedback, retry, outcomes, restart, and progress events.
+
+### Added
 - Branching eBilling invoice-rejection scenario with two decisions, feedback, retry paths, completion tracking, and restart.
 
 
