@@ -6,11 +6,34 @@ A dependency-free demonstration library of interactive learning patterns.
 
 - `index.html` — semantic demo page and sample content.
 - `styles.css` — hybrid theme, component styling, and responsive layout.
-- `app.js` — tab, flashcard, knowledge-check, branching scenario, and progress interactions.
+- `app.js` — tab, flashcard, knowledge-check, shared progress and scenario event integration.
+- `scenario-engine.js` — reusable renderer and interaction engine for configured scenarios.
+- `scenario-config.js` — editable scenario content, decision nodes, feedback, branches and outcomes.
 
-## Scenario-based learning component
+## Configurable scenario engine
 
-The demo includes a fictional eBilling rate-rejection scenario with two decision points, immediate explanatory feedback, retry paths, a final learning takeaway, and a restart control. The scenario is an instructional example only; actual rate changes must follow the organisation's approved matter-maintenance and review procedures.
+The scenario engine separates the content from the interaction code:
+
+- Edit `scenario-config.js` to add or revise scenario definitions.
+- Keep the renderer and decision logic in `scenario-engine.js`.
+- Add a mount element with `data-scenario-engine` and a matching `data-scenario-id` in the page.
+- The engine supports decision nodes, information nodes, branching destinations, correct/incorrect feedback, retry paths, final outcomes, key learning takeaways, restart, and completion events.
+- Each scenario needs a unique `id`, a valid `startNode`, and a `nodes` object. Each decision choice needs a unique `id`, display `text`, a Boolean `correct`, feedback, and a `nextNode` when correct.
+- A decision can offer more than one correct option, allowing a valid alternate path.
+- An information node uses `type: "information"`, `content`, `continueLabel`, and `nextNode`.
+- An outcome node uses `type: "outcome"`, `title`, `content`, and optional `takeaway`.
+
+### Add another scenario
+
+1. Add a new object to the `window.LDH_SCENARIO_CONFIGS` array in `scenario-config.js`.
+2. Give it a unique ID and a valid starting node.
+3. Define each decision, information node, and outcome under `nodes`.
+4. Add a mount element in `index.html` using the new scenario ID.
+5. Run the GitHub Pages workflow and test every branch, retry, completion, and restart path.
+
+Use plain text in configuration fields. The engine inserts content as text rather than interpreting it as HTML. Do not put confidential client, employee, or learner data in scenarios.
+
+The included eBilling rate-rejection scenario is fictional. Actual rate changes must follow the organisation's approved matter-maintenance and review procedures.
 
 ## Run the demo
 
