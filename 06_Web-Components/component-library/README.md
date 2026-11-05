@@ -6,7 +6,11 @@ A dependency-free demonstration library of interactive learning patterns.
 
 - `index.html` — semantic demo page and sample content.
 - `styles.css` — hybrid theme, component styling, and responsive layout.
-- `app.js` — tab, flashcard, knowledge-check, and progress interactions.
+- `app.js` — tab, flashcard, knowledge-check, branching scenario, and progress interactions.
+
+## Scenario-based learning component
+
+The demo includes a fictional eBilling rate-rejection scenario with two decision points, immediate explanatory feedback, retry paths, a final learning takeaway, and a restart control. The scenario is an instructional example only; actual rate changes must follow the organisation's approved matter-maintenance and review procedures.
 
 ## Run the demo
 
