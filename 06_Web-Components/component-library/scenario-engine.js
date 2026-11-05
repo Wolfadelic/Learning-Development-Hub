@@ -24,7 +24,7 @@
     let attempts = 0;
     let firstTryCorrect = 0;
     let decisionsCompleted = 0;
-    let firstAttemptRecorded = false;
+    let decisionAttemptCount = 0;
     let complete = false;
 
     const intro = element("div", "scenario-context");
@@ -48,6 +48,7 @@
         return;
       }
       currentNodeId = nodeId;
+      decisionAttemptCount = 0;
       const panel = element("div", "scenario-step");
       panel.append(element("p", "eyebrow", node.label || node.type.toUpperCase()));
 
@@ -105,6 +106,7 @@
           button.type = "button";
           button.addEventListener("click", () => {
             attempts += 1;
+            decisionAttemptCount += 1;
             const correct = choice.correct === true;
             feedback.hidden = false;
             feedback.classList.toggle("is-correct", correct);
@@ -115,8 +117,7 @@
             });
 
             if (correct) {
-              if (!firstAttemptRecorded) firstTryCorrect += 1;
-              firstAttemptRecorded = true;
+              if (decisionAttemptCount === 1) firstTryCorrect += 1;
               decisionsCompleted += 1;
               continueButton.hidden = false;
               continueButton.onclick = () => showNode(choice.nextNode);
@@ -132,9 +133,6 @@
           options.append(button);
         });
 
-        continueButton.addEventListener("click", () => {
-          if (continueButton.dataset.next) showNode(continueButton.dataset.next);
-        });
         panel.append(options, feedback);
       } else {
         panel.append(element("p", "feedback retry", "Unsupported node type: " + String(node.type)));
@@ -156,7 +154,7 @@
       attempts = 0;
       firstTryCorrect = 0;
       decisionsCompleted = 0;
-      firstAttemptRecorded = false;
+      decisionAttemptCount = 0;
       complete = false;
       announce(root, "ldh:scenario-reset", { scenarioId: config.id });
       showNode(currentNodeId);
