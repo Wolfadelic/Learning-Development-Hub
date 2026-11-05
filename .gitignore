@@ -1,0 +1,47 @@
+# Operating system files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor and IDE settings
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp
+*.bak
+*.old
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+secrets/
+credentials/
+
+# JavaScript dependencies and caches
+node_modules/
+.npm/
+.cache/
+
+# Common build output (retain source files)
+dist/
+build/
+coverage/
+
+# Python caches and virtual environments
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Local operating-system and application metadata
+.DS_Store?
+.AppleDouble
+.LSOverride
