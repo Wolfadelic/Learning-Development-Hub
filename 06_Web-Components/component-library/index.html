@@ -36,12 +36,12 @@
       <div class="progress-track" role="progressbar" aria-label="Learning activity progress" aria-valuemin="0" aria-valuemax="2" aria-valuenow="0" id="progress-bar">
         <span id="progress-fill"></span>
       </div>
-      <p class="helper-text">Reveal a flashcard and submit the knowledge check to complete this short demo.</p>
+      <p class="helper-text">Reveal a flashcard, complete the knowledge check, and finish the scenario to complete this demo.</p>
     </section>
 
     <div class="section-heading">
       <div><p class="eyebrow">EXPLORE THE LIBRARY</p><h2>Learning components</h2></div>
-      <span class="component-count">01 — 05</span>
+      <span class="component-count">01 — 06</span>
     </div>
 
     <section class="component-card" aria-labelledby="accordion-heading">
@@ -100,8 +100,53 @@
       </form>
     </section>
 
+
+    <section class="component-card" aria-labelledby="scenario-heading">
+      <div class="card-heading"><span class="component-number">05</span><div><p class="eyebrow">MAKE A DECISION</p><h3 id="scenario-heading">Scenario-based learning</h3><p class="card-description">Work through a realistic invoice rejection. Choose an action, review the consequences, and decide what to do next.</p></div></div>
+      <div class="scenario-shell" data-scenario>
+        <div class="scenario-context">
+          <p class="eyebrow">YOUR ROLE · EBILLING ASSOCIATE</p>
+          <p>A client has rejected an invoice because the timekeeper rate does not match its records. The invoice is due for resubmission today. The matter profile shows <strong>$400 per hour</strong>, while the client’s rejection note refers to an approved rate of <strong>$425 per hour</strong>.</p>
+          <p class="scenario-instruction">Choose the safest next action. You can retry if your first choice is not appropriate.</p>
+        </div>
+        <section class="scenario-step" data-scenario-step="1" aria-labelledby="scenario-step-one-heading">
+          <p class="eyebrow">DECISION 1 OF 2</p>
+          <h4 id="scenario-step-one-heading">What should you do first?</h4>
+          <div class="scenario-options" role="group" aria-labelledby="scenario-step-one-heading">
+            <button type="button" class="scenario-choice" data-scenario-choice data-correct="false">Change the rate to $425 and resubmit immediately.</button>
+            <button type="button" class="scenario-choice" data-scenario-choice data-correct="true">Review the rejection details and verify the approved rate, effective date, and supporting approval.</button>
+            <button type="button" class="scenario-choice" data-scenario-choice data-correct="false">Override the rate on this invoice so it can meet today’s deadline.</button>
+          </div>
+          <div class="scenario-feedback" data-scenario-feedback role="status" aria-live="polite" hidden>
+            <p data-scenario-feedback-text></p>
+            <button type="button" class="button button-primary" data-scenario-next hidden>Continue to decision 2</button>
+          </div>
+        </section>
+        <section class="scenario-step" data-scenario-step="2" aria-labelledby="scenario-step-two-heading" hidden>
+          <p class="eyebrow">DECISION 2 OF 2</p>
+          <h4 id="scenario-step-two-heading">You locate a documented approval for $425 per hour, effective from the start of the current billing period. The matter profile still shows $400. What is the best next step?</h4>
+          <div class="scenario-options" role="group" aria-labelledby="scenario-step-two-heading">
+            <button type="button" class="scenario-choice" data-scenario-choice data-correct="false">Update the matter rate and resubmit without checking the invoice lines.</button>
+            <button type="button" class="scenario-choice" data-scenario-choice data-correct="false">Leave the matter profile unchanged and manually edit only the rejected invoice.</button>
+            <button type="button" class="scenario-choice" data-scenario-choice data-correct="true">Follow the approved rate-maintenance process, update the matter details with the correct effective date, then validate the invoice before resubmission.</button>
+          </div>
+          <div class="scenario-feedback" data-scenario-feedback role="status" aria-live="polite" hidden>
+            <p data-scenario-feedback-text></p>
+            <button type="button" class="button button-primary" data-scenario-next hidden>View outcome</button>
+          </div>
+        </section>
+        <section class="scenario-outcome" data-scenario-outcome aria-labelledby="scenario-outcome-heading" hidden>
+          <p class="eyebrow">SCENARIO COMPLETE</p>
+          <h4 id="scenario-outcome-heading">Resolve the cause before resubmitting.</h4>
+          <p>You verified the approval, corrected the matter setup through the approved process, and validated the invoice before resubmission.</p>
+          <div class="scenario-takeaway"><strong>Key learning</strong><p>Do not treat a rejected invoice as an isolated data-entry problem. Verify the source approval, effective date, matter setup, and invoice details. Keep a clear record of the correction and follow the required review process.</p></div>
+          <button type="button" class="button button-secondary" data-scenario-restart>Try the scenario again</button>
+        </section>
+      </div>
+    </section>
+
     <section class="component-card principles-card" aria-labelledby="principles-heading">
-      <div class="card-heading"><span class="component-number">05</span><div><p class="eyebrow">DESIGN NOTE</p><h3 id="principles-heading">Build with intention</h3><p class="card-description">A reusable component is only useful when it improves the learning experience.</p></div></div>
+      <div class="card-heading"><span class="component-number">06</span><div><p class="eyebrow">DESIGN NOTE</p><h3 id="principles-heading">Build with intention</h3><p class="card-description">A reusable component is only useful when it improves the learning experience.</p></div></div>
       <div class="principle-grid">
         <div><strong>01</strong><h4>Accessible</h4><p>Keyboard-friendly controls, labels, focus indicators, and readable contrast.</p></div>
         <div><strong>02</strong><h4>Reusable</h4><p>Consistent patterns that can be adapted without rewriting the interaction.</p></div>
