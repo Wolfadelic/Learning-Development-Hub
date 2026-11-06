@@ -31,7 +31,7 @@ button { cursor: pointer; }
 .brand strong, .brand small { display: block; }
 .brand strong { font-size: .94rem; letter-spacing: -.01em; }
 .brand small { color: #b9c7d9; font-size: .76rem; }
-.version-tag { color: #c2d2e5; font-size: .68rem; font-weight: 750; letter-spacing: .12em; }
+.studio-launch { margin-left:auto; padding:8px 12px; border:1px solid #52647d; border-radius:9px; color:#e5eef9; text-decoration:none; font-size:.76rem; font-weight:750; }\n.studio-launch:hover { background:#263a55; }\n.version-tag { color: #c2d2e5; font-size: .68rem; font-weight: 750; letter-spacing: .12em; }
 .page-shell { max-width: 920px; margin: auto; padding: 0 24px 36px; }
 .hero { padding: 62px 0 34px; }
 .eyebrow { margin: 0 0 7px; color: var(--blue); font-size: .68rem; font-weight: 800; letter-spacing: .14em; }
