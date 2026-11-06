@@ -14,7 +14,7 @@ This repository brings learning design and development resources together, inclu
 - Approved multimedia assets and reusable templates
 - Technical documentation, quality assurance, and deployment guidance
 
-## Technology and platforms
+## Scenario Authoring Studio\n\nThe browser-based Scenario Authoring Studio is available from the published component library at `scenario-authoring.html`. It supports scenario setup, decision/information/outcome nodes, branching destinations, feedback, validation, learner preview, and export to the existing `scenario-config.js` format. Work remains in the browser until exported; publishing requires a reviewed repository update and a manually triggered Pages workflow.\n\nUse synthetic demonstration content only. Do not place confidential company, client, or learner information in the public repository or published site.\n\n## Technology and platforms
 
 | Technology or platform | Intended use |
 |---|---|
