@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Create, validate, preview and export configurable learning scenarios.">
+<title>Scenario Authoring Studio | Learning Development Hub</title>
+<link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="scenario-authoring.css">
+<script src="scenario-authoring.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#studio-main">Skip to authoring studio</a>
+<header class="site-header"><div class="header-inner"><a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">LD</span><span><strong>Learning Development Hub</strong><small>Scenario Authoring Studio</small></span></a><a class="studio-back" href="index.html">Back to component library</a></div></header>
+<main id="studio-main" class="studio-shell">
+<section class="studio-intro"><p class="eyebrow">AUTHOR · VALIDATE · PREVIEW · EXPORT</p><h1>Scenario <span>Authoring Studio</span></h1><p>Create branching learning scenarios without editing JavaScript. Your work stays in this browser until you export it.</p></section>
+<div class="studio-toolbar">
+<label class="file-button">Import scenario JSON<input id="import-file" type="file" accept=".json,application/json"></label>
+<button class="button button-secondary" id="new-scenario" type="button">New scenario</button>
+<button class="button button-secondary" id="validate-scenario" type="button">Validate</button>
+<button class="button button-primary" id="export-scenario" type="button">Export config.js</button>
+<button class="button button-secondary" id="export-json" type="button">Export JSON</button>
+</div>
+<div class="studio-grid">
+<section class="studio-panel" aria-labelledby="details-heading">
+<div class="studio-panel-heading"><div><p class="eyebrow">01 · SCENARIO SETUP</p><h2 id="details-heading">Scenario details</h2></div></div>
+<div class="field-grid">
+<label>Scenario ID<input id="scenario-id" value="new-scenario" maxlength="80"></label>
+<label>Title<input id="scenario-title" value="New learning scenario" maxlength="120"></label>
+<label>Role label<input id="scenario-role" value="LEARNING SCENARIO" maxlength="80"></label>
+<label class="field-wide">Description<textarea id="scenario-description" rows="2"></textarea></label>
+<label class="field-wide">Context<textarea id="scenario-context" rows="3"></textarea></label>
+<label class="field-wide">Learner instructions<textarea id="scenario-instruction" rows="2">Choose the most appropriate action.</textarea></label>
+<label>Starting node<select id="start-node"></select></label>
+</div>
+</section>
+<section class="studio-panel" aria-labelledby="nodes-heading">
+<div class="studio-panel-heading"><div><p class="eyebrow">02 · LEARNING FLOW</p><h2 id="nodes-heading">Scenario nodes</h2></div><button class="button button-primary" id="add-node" type="button">Add node</button></div>
+<div class="node-workspace"><nav class="node-list" id="node-list" aria-label="Scenario nodes"></nav><div class="node-editor" id="node-editor"><p class="empty-state">Select a node or add one to begin.</p></div></div>
+</section>
+<section class="studio-panel" aria-labelledby="validation-heading">
+<div class="studio-panel-heading"><div><p class="eyebrow">03 · QUALITY CHECK</p><h2 id="validation-heading">Validation</h2></div></div>
+<div id="validation-results" class="validation-results" role="status" aria-live="polite"><p>Validate your scenario to check required fields, node IDs and branching destinations.</p></div>
+</section>
+<section class="studio-panel preview-panel" aria-labelledby="preview-heading">
+<div class="studio-panel-heading"><div><p class="eyebrow">04 · TRY THE EXPERIENCE</p><h2 id="preview-heading">Learner preview</h2></div><button class="button button-secondary" id="restart-preview" type="button">Restart preview</button></div>
+<div id="scenario-preview" class="scenario-shell preview-stage"><p class="empty-state">Preview appears here after you select or edit a scenario.</p></div>
+</section>
+</div>
+<p class="studio-note"><strong>Publishing workflow:</strong> Export the configuration, review it, then replace the scenario data in <code>scenario-config.js</code> through GitHub. The live site changes only after the repository is updated and the Pages workflow is run.</p>
+<footer class="site-footer"><span>Learning Development Hub</span><span>Scenario Authoring Studio · Local browser workspace</span></footer>
+</main>
+</body></html>
