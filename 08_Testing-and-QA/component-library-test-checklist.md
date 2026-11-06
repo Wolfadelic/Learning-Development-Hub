@@ -59,7 +59,7 @@ Browser version, device viewport, and screen-reader behaviour were not recorded 
 - [ ] A missing node ID displays a safe configuration error rather than breaking the page.
 - [ ] Configured text is rendered as text, not interpreted as HTML.
 
-## Accessibility checks
+## Scenario Authoring Studio checks\n\n- [ ] Studio opens from the component library navigation.\n- [ ] Scenario metadata fields update the learner preview.\n- [ ] Add, select, rename, change type, and delete node operations work.\n- [ ] Decision choices can be added, edited, marked correct, assigned destinations, and removed.\n- [ ] Information nodes require a valid next node.\n- [ ] Validation identifies missing fields, invalid IDs, and broken destinations.\n- [ ] Learner preview supports incorrect feedback, retry, correct branching, information nodes, and outcomes.\n- [ ] JSON import loads a valid scenario configuration.\n- [ ] JSON export preserves the scenario configuration.\n- [ ] JavaScript configuration export uses `window.LDH_SCENARIO_CONFIGS` and remains compatible with `scenario-engine.js`.\n- [ ] Export is blocked when validation errors remain.\n- [ ] Studio layout remains usable on desktop, tablet, and mobile.\n\n## Accessibility checks
 
 - [ ] Skip link is visible on keyboard focus and moves to main content.
 - [ ] All interactive controls can be reached and operated by keyboard.
