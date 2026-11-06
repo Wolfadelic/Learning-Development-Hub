@@ -4,7 +4,7 @@ All notable changes to this repository will be documented in this file.
 
 The format is based on the principles of Keep a Changelog. Dates use `YYYY-MM-DD`.
 
-## [Unreleased]
+## [Unreleased]\n\n### Added\n- Browser-based Scenario Authoring Studio with scenario metadata editing, decision/information/outcome nodes, branching destinations, feedback editing, validation, learner preview, JSON import, and configuration export.\n- Entry point from the component library to the Scenario Authoring Studio.\n
 
 ### Added
 - Configurable scenario engine with separate scenario data, decision and information nodes, branching, feedback, retry, outcomes, restart, and progress events.
